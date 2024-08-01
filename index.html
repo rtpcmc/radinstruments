@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/index_style.css">
+    <link rel="shortcut icon" href="./assets/img/login/shortcut.png"/>
+    <title>Radiology Instruments | PCMC</title>
+</head>
+
+<body>
+
+    <img class="logo" src="./assets/img/login/logo.png" alt="hospital-logo">
+
+    <div class="container" id="container">
+        <div class="form-container sign-in">
+            <form>
+                <h1>ลงชื่อเข้าใช้</h1>
+                <input type="text" id="Username" placeholder="Username">
+                <input type="password" id="Password" placeholder="Password">
+                <button class="login-btn" onclick="func()">
+                    เข้าสู่ระบบ
+                </button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-right">
+                    <h1>Radiology Instruments</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function func(){
+            var username = document.getElementById("Username").value;
+            var password = document.getElementById("Password").value;
+            if (username == 'rtpcmc' && password == 'pcmc1234'){
+                sessionStorage.setItem("AuthenticationState", "Authenticated");
+                alert("ลงชื่อเข้าใช้สำเร็จ");
+                let windowRef = window
+                setTimeout(() => {
+                windowRef.location.assign('table-1.html')
+                })
+            }
+            else{
+                alert("Username/Password ไม่ถูกต้อง");
+                return;
+            }
+        }
+
+    </script>
+
+    <script type="text/javascript">
+    if (window.history.forward(1) != null)
+          window.history.forward(1);
+    
+    if (window.history.backward(1) != null)
+          window.history.backward(1);
+    </script>
+
+</body>
+
+</html>
